@@ -25,6 +25,11 @@ import Env from '@ioc:Adonis/Core/Env'
 Route.get('/', () => {
   return { hello: 'world' }
 })
+Route.group(() => {
+  Route.group(() => {
+    Route.get('/items', 'ItemsController.index')
+  }).prefix('/items')
+}).prefix('/api')
 
 Route.group(() => {
   Route.post('/register', 'AuthController.register')

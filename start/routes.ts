@@ -27,7 +27,7 @@ Route.get('/', () => {
 })
 Route.group(() => {
   Route.group(() => {
-    Route.get('/items', 'ItemsController.index')
+    Route.get('/', 'ItemsController.index')
   }).prefix('/items')
 }).prefix('/api')
 
